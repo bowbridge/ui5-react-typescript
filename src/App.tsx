@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { ThemeProvider } from "@ui5/webcomponents-react"
+import { BrowserRouter } from "react-router-dom"
+import { Helmet } from "react-helmet"
+import { useTranslation } from "react-i18next"
+
+import Shell from "./components/shell/Shell"
+import Router from "./routes/Router"
 
 function App() {
+  const { t } = useTranslation()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider>
+      <BrowserRouter>
+        <Helmet title={t("helmet.title.app")} />
+        <Shell title={t("shell.title")} />
+        <Router />
+      </BrowserRouter>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
