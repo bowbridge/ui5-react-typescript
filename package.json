@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bowbridge/ui5-react-toolkit": "^1.0.0",
+    "@bowbridge/ui5-react-toolkit": "1.2.1",
     "@hookform/resolvers": "^2.8.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -33,7 +33,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "commit": "git-cz"
+    "start:mock-server": "nodemon --watch server --exec npx json-server --p 3001  server/mockserver.js -m ./node_modules/json-server-auth",
+    "commit": "git-cz",
+    "dev": "concurrently --kill-others \"yarn start\" \"yarn start:mock-server\""
   },
   "eslintConfig": {
     "extends": [
@@ -57,7 +59,11 @@
     "@types/react-helmet": "^6.1.4",
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.1",
-    "cz-conventional-changelog": "3.3.0"
+    "concurrently": "^6.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
+    "nodemon": "^2.0.14"
   },
   "config": {
     "commitizen": {

@@ -14,6 +14,12 @@ This Application created based on the official [Template](https://github.com/SAP
 
 - `useLocalStorageState`: Helps you to sync your component state with the `localStorage`.
 
+# TODO
+
+- Testing
+- Form Examples - React hook form with @bowbridge/ui5-react-toolkit
+- Authentication & Authorization
+
 ## Available Scripts
 
 In the project directory, you can run:
